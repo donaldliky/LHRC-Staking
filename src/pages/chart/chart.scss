@@ -1,0 +1,115 @@
+
+.chartBack {
+    background-color: #12b8ce;
+    .chartbodySection {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 143px;
+        display: flex;
+        justify-content: space-between;
+
+        .chartInfoSection{
+            padding: 40px;
+            width: 70%;
+            background-color: #65361c;
+            border-radius: 80px;
+            border: 3px solid rgb(153, 112, 93);
+            margin: 10px;
+
+            .firstSection {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .left {
+                    display: flex;
+                    align-items: center;
+                    color: #C7FF54;
+                }
+                .right {
+                    display: flex;
+                    align-items: center;
+                    color: #75E0EC;
+                    background-color: #99705D;
+                    border-radius: 29px;
+                    font-size: 30px;
+                    padding: 10px;
+                }
+            }
+            
+            .secondSection {
+
+            }
+
+            .thirdSection {
+
+            }
+            .chart {
+                
+            }
+        }
+
+        .swapSection {
+            padding: 40px;
+            background-color: #65361c;
+            border-radius: 80px;       
+            border: 3px solid #C7FF54;
+            margin: 10px;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .swap_left {
+                    display: flex;
+                    align-items: center;
+                    .swap_title {
+                        color: #75E0EC;
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 5px;
+                    }
+                }
+                .swap_right {
+                    
+                }
+            }
+            .swap_item {
+                display: flex;
+                flex-direction: column;
+                
+                .swap_item_desc {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                input {
+                    // width: 100%;
+                    border-radius: 50px;
+                    text-align: right;
+                    padding: 5px;
+                    font-size: 40px;
+                    background-color: #99705D;
+                    border: #C7FF54;
+                    padding: 14px;
+                    color: white;
+                    margin-top: 14px;
+                    // height: 80px;
+                }
+            }
+           
+            .wallet {
+                width: 100%;
+                border-radius: 50px;
+                font-size: 40px;
+                padding: 14px;
+                background-color: #99705D;
+                border: #C7FF54;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}

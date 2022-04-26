@@ -1,0 +1,75 @@
+.nftSameModal {
+    position: relative;
+    box-sizing: border-box;
+    // height: 696px;
+    width: 1060px;
+    box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.32);
+    margin: 0 auto;
+    margin-top: 40px;
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    padding: 53px 78px;
+    border-radius: 16px;
+
+    .title {
+
+        color: #3F2827;
+        font-family: Montserrat;
+        font-size: 56px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 78px;
+        text-align: center;
+    }
+
+    .div {
+        div {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    .nftList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .cross {
+        font-size: 70px;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .cross:hover {
+        color: black;
+    }
+
+    .back {
+        color: #3F2827;
+        font-family: Montserrat;
+        font-size: 32px;
+        // position: absolute;
+        // left: 40px;
+        // top: 60px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .title-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

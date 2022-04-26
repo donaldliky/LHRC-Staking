@@ -1,0 +1,21 @@
+.statisticsItemBody {
+    border-left: 5px solid #65361c;
+    padding-left: 20px;
+    padding-right: 50px;
+    margin-right: 10%;
+    // width: 80px;
+    .first {
+        color: #65361c;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .second {
+        color: red;
+        font-size: 60px;
+        font-weight: bold;
+    }
+    .third {
+        color: green;
+        font-size: 40px;
+    }
+}

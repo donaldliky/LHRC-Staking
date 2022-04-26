@@ -1,0 +1,62 @@
+.bodySuccess {
+    position: relative;
+    box-sizing: border-box;
+    // height: 696px;
+    width: 1060px;
+    box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.32);
+    margin: 0 auto;
+    margin-top: 40px;
+    z-index: 10;
+    background-color: white;
+    text-align: center;
+    padding: 53px 78px;
+
+    .p1 {
+        color: #3F2827;
+        font-family: Montserrat;
+        font-size: 72px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .p2 {
+        opacity: 0.8;
+        color: #3F2827;
+        font-family: Montserrat;
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .viewBtnSection {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 136px;
+
+        .viewBtn {
+            height: 96px;
+            width: 592px;
+            border-radius: 83.43px;
+            background-color: #99705D;
+            font-size: 36px;
+            font-weight: 800;
+        }
+    }
+
+    .cross {
+        font-size: 70px;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .cross:hover {
+        color: black;
+    }
+}

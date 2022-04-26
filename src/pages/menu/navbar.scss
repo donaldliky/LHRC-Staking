@@ -1,0 +1,131 @@
+.topLogo {
+    display: none;
+    justify-content: center;
+    margin-top: 20px;
+    img {
+        width: 80%;
+    }
+}
+.menu {
+    height: 128px;
+    margin: 0 auto;
+    margin-top: 34px;
+    // background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border-radius: 100px;
+    background: transparent linear-gradient(120deg, #FFFFFF 0%, #E6FDEE 100%) 0% 0% no-repeat padding-box;
+    border-radius: 64px;
+    opacity: 1;
+
+    .left {
+        z-index: 20;
+        background-image: url('/assets/image/home/Asset\ 12.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 435px;
+        height: 170px;
+        // width: 100%;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+
+        .menu_item {
+            margin: 20px;
+            font-size: 30px;
+            font-family: Montserrat-Extra-Bold;
+            color: #65361c;
+            cursor: pointer;
+        }
+
+        .wallet {
+            border-radius: 50px;
+            background-color: #99705D;
+            padding: 10px 20px;
+            color: white;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .menu {
+        height: 100px;
+    }
+    .menu .left {
+        width: 300px;
+        height: 120px;
+    }
+    .menu .right .menu_item {
+        margin: 17px;
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 1078px) {
+    .menu {
+        height: 80px;
+    }
+
+    .menu .left {
+        width: 200px;
+        height: 90px;
+    }
+    
+    .menu .right .menu_item {
+        margin: 15px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 960px) {
+    .menu {
+        height: 60px;
+    }
+
+    .menu .left {
+        width: 170px;
+        height: 65px;
+    }
+    
+    .menu .right .menu_item {
+        margin: 10px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 620px) {
+    .menu {
+        justify-content: center;
+    }
+    .menu .left {
+        display: none;
+    }   
+    .topLogo {
+        display: flex;
+    }
+}
+
+@media (max-width: 520px) {
+    .menu {
+        justify-content: space-evenly;
+    }
+    .menu .right .menu_item {
+        margin: 7px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    // .menu {
+    //     width: 100%;
+    //     justify-content: space-between;
+    // }
+    .menu .right .menu_item {
+        margin: 3px;
+        font-size: 10px;
+    }
+}

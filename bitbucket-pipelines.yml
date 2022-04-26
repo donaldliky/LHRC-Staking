@@ -1,0 +1,127 @@
+definitions:
+  updateOS: &update
+    apt-get update
+  printVersion: &version
+    node --version && npm --version
+  build: &build
+    CI=false REACT_APP_DEVTOOLS=$REACT_APP_DEVTOOLS npm run build
+
+  steps:
+    - step: &test
+        name: Test
+        image: node:16
+        runs-on:
+          - 'self.hosted'
+          - 'linux'
+          - 'web'
+        size: 1x
+        script:
+          - *update
+          - *version
+          - npm install --no-audit
+          #- npm run test
+        artifacts:
+          - node_modules/**
+    - step: &deploy
+        name: Deploy
+        image: amazon/aws-cli
+        deployment: changethis
+        runs-on:
+          - 'self.hosted'
+          - 'linux'
+          - 'web'
+        size: 1x
+        #trigger: manual
+        clone:
+          enabled: false
+        script:
+          # AWS S3 deploy
+          - pipe: atlassian/aws-s3-deploy:1.1.0
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              S3_BUCKET: $S3_BUCKET
+              LOCAL_PATH: 'build'
+              DELETE_FLAG: 'true'
+          # Custom No-Store metadata for index.html
+          - aws s3 cp build/index.html s3://${S3_BUCKET}/index.html --metadata-directive REPLACE --cache-control No-Store
+          # AWS CloudFront create invalidation
+          - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              DISTRIBUTION_ID: $CF_DIST_ID
+              PATHS: '/*'
+
+pipelines:
+  custom: # Pipelines that can only be triggered manually or by schedule
+    deploy-to-testnet:
+      - step: *test
+      - step:
+          name: Build
+          image: node:16
+          deployment: TestnetBuildStep
+          runs-on:
+            - 'self.hosted'
+            - 'linux'
+            - 'web'
+          size: 1x
+          script:
+            - *update
+            - *version
+            # Environment specific config
+            - cp -p ./src/constants/index_testnet.js ./src/constants/index.js
+            # Build frontend
+            - *build
+          artifacts:
+            - build/**
+      - step:
+          <<: *deploy
+          deployment: Testnet
+  branches:
+    dev:
+      - step: *test
+      - step:
+          name: Build
+          image: node:16
+          deployment: DevelopmentBuildStep
+          runs-on:
+            - 'self.hosted'
+            - 'linux'
+            - 'web'
+          size: 1x
+          script:
+            - *update
+            - *version
+            # Environment specific config
+            - cp -p ./src/constants/index_dev.js ./src/constants/index.js
+            # Build frontend
+            - *build
+          artifacts:
+            - build/**
+      - step:
+          <<: *deploy
+          deployment: Development
+    prod:
+      - step: *test
+      - step:
+          name: Build
+          image: node:16
+          deployment: ProductionBuildStep
+          runs-on:
+            - 'self.hosted'
+            - 'linux'
+            - 'web'
+          size: 1x
+          script:
+            - *update
+            - *version
+            # Build frontend
+            - *build
+          artifacts:
+            - build/**
+      - step:
+          <<: *deploy
+          deployment: Production

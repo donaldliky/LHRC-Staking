@@ -1,0 +1,30 @@
+.featureBack {
+    // background-image: url('../../assets/image/1x/Asset\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .feature {
+        width: 90%;
+        margin: 0 auto;
+        padding: 80px;
+        .title {
+            color: white;
+            text-shadow: -2px 0 #65361c, 0 2px #65361c, 2px 0 #65361c, 0 -2px #65361c;
+            font-size: 66px;
+            text-align: center;
+        }
+        .desc {
+            text-align: center;
+            color: #65361c;
+            font-size: 30px;
+            margin-top: 28px;
+        }
+        .items {
+            margin-top: 89px;
+            display: flex;
+            justify-content: space-between;
+            .item {
+                
+            }
+        }
+    }
+}

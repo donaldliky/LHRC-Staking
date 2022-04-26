@@ -1,0 +1,165 @@
+.home {
+    width: 100%;
+    // height: 100vh;
+    background-image: url('/assets/image/home/Sky.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .bodyHome {
+        padding-top: 50px;
+        max-width: 1920px;
+        margin: 0 auto;
+        width: 95%;
+
+        .title {
+            margin: 0 auto;
+            color: white;
+            text-shadow: -3px 0 #65361c, 0 3px #65361c, 3px 0 #65361c, 0 -3px #65361c;
+            font-size: 50px;
+            text-align: center;
+            margin-top: 40px;
+            letter-spacing: 3px;
+
+
+        }
+
+        .nfts {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 55px;
+            position: relative;
+            z-index: 4;
+
+            .items {
+                display: flex;
+                justify-content: flex-start;
+
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 265px;
+                    margin: 0 10px;
+
+                    .scale {
+                        position: absolute;
+                        color: white;
+                        text-shadow: -3px 0 #65361c, 0 3px #65361c, 3px 0 #65361c, 0 -3px #65361c;
+                        font-size: 60px;
+                        margin-top: -20px;
+                        font-weight: bold;
+                    }
+
+                    img {
+                        width: 100%;
+                        border: 5px solid #65361c;
+                        border-radius: 50%;
+                        margin: 20px;
+                    }
+
+                    .desc {
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: #3F2827;
+                        text-align: center;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    .greenBack {
+        background-image: url('/assets/image/home/Bush.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 186px;
+        // padding-top: 26px;
+
+        .backFence {
+            background-image: url('/assets/image/home/Back\ Fence.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            // width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            img {
+                height: 300%;
+                margin-top: -350px;
+            }
+        }
+    }
+
+    .hay {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -75px;
+        margin-bottom: -100px;
+        align-items: center;
+    }
+
+    .grassBack {
+        background-image: url('/assets/image/home/Grass.svg');
+        background-size: 300%;
+        background-repeat: no-repeat;
+        background-position: center;
+        // width: 100%;
+        height: 260px;
+
+        // display: flex;
+        // align-items: flex-end;
+        // margin-bottom: 0px;
+        .frontFence {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            // align-self:flex-end;
+            // margin-bottom: 0;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .nfts .item {
+        width: 180px !important;
+    }
+
+    .frontFence img {
+        width: 45%;
+    }
+
+    .hay-item {
+        width: 254px;
+    }
+
+    .hay img {
+        width: 100%
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .nfts .item {
+        width: 125px !important;
+    }
+
+    .nfts .scale {
+        font-size: 30px !important;
+    }
+
+    .nfts .desc {
+        font-size: 23px !important;
+    }
+}

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css?family=Montserrat') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Extra-Bold';
+  src: url('Montserrat-ExtraBold.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('Montserrat-Bold.ttf') format('truetype');
+}
+
+* {
+  font-family: Montserrat;
+}
+
+.bold-font {
+  font-family: Montserrat-Bold;
+}

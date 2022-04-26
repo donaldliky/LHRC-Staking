@@ -1,0 +1,7 @@
+export const lhrcStakingContractAddr = '0x0cDf3209ce0a13C85a5062a26C58500c43d853E6'
+export const stakeTokenAddr = '0x850d826984bcbc52c6e9026Cb8e065537d34A96d'
+export const barncatAddr = '0xbD0D400A60eA14fe047A47B988A94A61F16592e6'
+export const ponyAddr = '0x2390CAc78Aa44C9CEfc50DaC3593cb6499E08Faa'
+export const horseAddr = '0x302fe3bD91Ffcd5fE02EEA27247383e0eD31E05E'
+export const skyboxAddr = '0xc472CeD6B029661a95Efc9564F5ABe6ccFAe1f47'
+export const lpAddr = '0xC383ee89573dB73cf61D0fc3410bAf0a86dD0eAf'
